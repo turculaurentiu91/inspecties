@@ -1,26 +1,14 @@
 <?php namespace Nen;
 
 function add_submenu() {
-  if (defined('INSPECTIES_ADMIN_MENU')) {
-    add_submenu_page(
-      'inspecties',
-      __("NEN3140", "tlc-events"),
-      __("NEN3140", "tlc-events"),
-      'manage_options',
-      'tlc-nen3140',
-      'Nen\render_settings_page'
-    );
-  } else {
-    define('INSPECTIES_ADMIN_MENU', true);
-    add_menu_page(
-      __("Inspecties", "tlc-events"),
-      __("Inspecties", "tlc-events"),
-      'manage_options',
-      'inspecties',
-      'Nen\render_settings_page',
-      'dashicons-admin-plugins'
-    );
-  }
+  add_submenu_page(
+    'inspecties',
+    __("NEN3140", "tlc-events"),
+    __("NEN3140", "tlc-events"),
+    'manage_options',
+    'tlc-nen3140',
+    'Nen\render_settings_page'
+  );
 }
 
 function render_settings_page() {
