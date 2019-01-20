@@ -1,4 +1,4 @@
-<?php namespace Nen;
+<?php namespace Nen;    //EDIT THE NAMESPACE
 function clean_string($string)
 {
     $bad = array("content-type", "bcc:", "to:", "cc:", "href");
@@ -82,8 +82,8 @@ function email_client($data) {
   $body .= "</html>\n"; 
 
   apply_filters( 'wp_mail_from_name', 'Hoppenbrouwers Techniek B.V.' );
-  add_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );
+  add_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );   // Edit callback namespace
   \wp_mail($email, "Offerte Hoppenbrouwers Techniek - NEN3140", $body, '', file_path($postcode, $huisnummer));
     
-  remove_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );
+  remove_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );    // Edit callback namespace
 }

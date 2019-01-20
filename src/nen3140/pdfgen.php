@@ -1,4 +1,4 @@
-<?php namespace Nen;
+<?php namespace Nen; //EDIT THE NAMESPACE
 
 
 function pdfgen($data) {

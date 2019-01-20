@@ -1,34 +1,38 @@
-<?php namespace Nen;
+<?php namespace Nen;  //EDIT THE NAMESPACE
 
 function add_submenu() {
   add_submenu_page(
-    'inspecties',
-    __("NEN3140", "tlc-events"),
-    __("NEN3140", "tlc-events"),
+    'inspecties', //DONT TOUCH THIS
+    __("NEN3140", "tlc-events"),  //NAME OF THE SUBMENU PAGE
+    __("NEN3140", "tlc-events"),  //NAME OF THE SUBMENU PAGE
     'manage_options',
-    'tlc-nen3140',
-    'Nen\render_settings_page'
+    'tlc-nen3140',  //MAKE THIS UNIQUE
+    'Nen\render_settings_page'  //EDIT THE CALLBACK NAMESPACE
   );
 }
 
 function render_settings_page() {
 
-  if (isset($_POST["nen-single-box-price"])) {
-    update_option("nen-single-box-price", $_POST["nen-single-box-price"]);
+  if (isset($_POST["nen-single-box-price"])) { //YOU SHOULD EDIT THIS TO MATCH THE FORM INPUT FIELD NAME AND ID
+    update_option("nen-single-box-price", $_POST["nen-single-box-price"]); //THE OPTION NAME MUST BE UNIQUE
   }
 
+  //SAME AS ABOVE
   if (isset($_POST["nen-multi-box-price"])) {
     update_option("nen-multi-box-price", $_POST["nen-multi-box-price"]);
   }
 
+  //SAME AS ABOVE
   if (isset($_POST["nen-reiskosten"])) {
     update_option("nen-reiskosten", $_POST["nen-reiskosten"]);
   }
 
+  //SAME AS ABOVE
   if (isset($_POST["nen-admin-email"])) {
     update_option("nen-admin-email", $_POST["nen-admin-email"]);
   }
 
+  //EDIT THE OPTIONS NAME
   $single_box_price = get_option('nen-single-box-price', 550);
   $multi_box_price = get_option("nen-multi-box-price", 325);
   $reiskosten = get_option("nen-reiskosten", 51.50);
@@ -77,4 +81,4 @@ function render_settings_page() {
   <?php
 }
 
-add_action('admin_menu', 'Nen\add_submenu');
+add_action('admin_menu', 'Nen\add_submenu');  //EDIT THE CALLBACK NAMESPACE

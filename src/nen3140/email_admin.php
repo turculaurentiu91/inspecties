@@ -1,4 +1,4 @@
-<?php namespace Nen;
+<?php namespace Nen; //EDIT THE NAMESPACE
 
 function email_admin($data) {
   extract($data);
@@ -63,9 +63,9 @@ function email_admin($data) {
   $body .= "</html>\n"; 
 
   apply_filters( 'wp_mail_from_name', 'Offerte NEN3140 ' . $naam );
-  add_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );
+  add_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' ); // Make sure you edit the proper namespace for callbacks
   $admin_email = get_option('nen-admin-email', 'avmensfoort@hoppenbrouwers.nl');
   \wp_mail($admin_email, "Offerte Hoppenbrouwers Techniek - NEN3140", $body, '', file_path($postcode, $huisnummer));
     
-  remove_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );
+  remove_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );  // Edit the callback namespace
 }

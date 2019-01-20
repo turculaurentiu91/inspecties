@@ -1,14 +1,14 @@
-<?php namespace Nen;
+<?php namespace Nen;  //EDIT THE NAMESPACE
 
 function register_shortcode() {
   add_shortcode(
-    'nen_form',
-    '\Nen\render_form'
+    'nen_form',   // the sortcode name
+    '\Nen\render_form'  //the callback namespace
   );
 }
 
 function file_path($postcode, $huisnummer) {
-  return WP_CONTENT_DIR . '/uploads/inspecties/' . $postcode . '-' . $huisnummer . '.pdf';
+  return WP_CONTENT_DIR . '/uploads/inspecties/' . $postcode . '-' . $huisnummer . '.pdf'; 
 }
 
 function render_form() {
@@ -99,4 +99,4 @@ function render_form() {
   return $htmlData;
 }
 
-\add_action('init', 'Nen\register_shortcode');
+\add_action('init', 'Nen\register_shortcode');  //definetly edit callback namespace

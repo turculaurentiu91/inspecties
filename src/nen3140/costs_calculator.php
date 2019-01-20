@@ -1,10 +1,12 @@
-<?php namespace Nen;
+<?php namespace Nen;  //EDIT THE NAMESPACE
 
 function number($string)
 {
     return number_format($string, 2, ',', '.');
 }
 
+
+// Here you make any calculations you need to do n order to render the pdf document
 function costs_calc($verdeelkast) {
   $singe_box_price = get_option('nen-single-box-price', 550);
   $multi_box_price = get_option('nen-multi-box-price', 325);

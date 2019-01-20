@@ -13,4 +13,6 @@ define('INSPECTIES_ASSETS_DIR', dirname(__FILE__) . '/assets');
 
 require_once('settings_menu.php');
 require_once('TCPDF/tcpdf.php');
+
+// --HERE YOU SHOULD ADD ANY SUB DIRECTORY MAIN FILE
 require_once('src/nen3140/nen3140.php');
