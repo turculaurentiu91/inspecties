@@ -13,6 +13,7 @@ define('INSPECTIES_ASSETS_DIR', dirname(__FILE__) . '/assets');
 
 require_once('settings_menu.php');
 require_once('TCPDF/tcpdf.php');
+require_once('activation_hook.php');
 
 register_activation_hook(__FILE__, 'Inspecties\activation_hook');
 
