@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Inspecties
-Plugin URI: https://www.fiverr.com/laurentiuturcu
-Author URI: https://www.fiverr.com/laurentiuturcu
+Plugin Name: Inspectie tools
+Plugin URI: https://www.hoppenbrouwerstechniek.nl
+Author URI: https://www.hoppenbrouwerstechniek.nl
 Version: 1.0.0
-Author: Turcu Laurentiu
-Text Domain: inspecties
+Author: Marnick van den Brand
+Text Domain: Alle inspectie tools
 */
 
 define('INSPECTIES_ASSETS_URL', plugin_dir_url(__FILE__) . '/assets');
@@ -19,3 +19,4 @@ register_activation_hook(__FILE__, 'Inspecties\activation_hook');
 
 // --HERE YOU SHOULD ADD ANY SUB DIRECTORY MAIN FILE
 require_once('src/nen3140/nen3140.php');
+require_once('src/noodverlichting/noodverlichting.php');

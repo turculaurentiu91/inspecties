@@ -1,14 +1,14 @@
-<?php namespace Nen;  //EDIT THE NAMESPACE
+<?php namespace noodverlichting;  //EDIT THE NAMESPACE
 
 function register_shortcode() {
   add_shortcode(
-    'nen_form',   // the sortcode name
-    '\Nen\render_form'  //the callback namespace
+    'noodverlichting',   // the sortcode name
+    '\noodverlichting\render_form'  //the callback namespace
   );
 }
 
 function file_path($postcode, $huisnummer) {
-  return WP_CONTENT_DIR . '/uploads/inspecties/nen3140/' . $postcode . '-' . $huisnummer . '.pdf'; 
+  return WP_CONTENT_DIR . '/uploads/inspecties/noodverlichting/' . $postcode . '-' . $huisnummer . '.pdf'; 
 }
 
 function render_form() {
@@ -21,7 +21,7 @@ function render_form() {
     require_once('email_admin.php');
 
     extract($_POST);
-    extract(costs_calc($verdeelkast));
+    extract(costs_calc($armaturen));
 
     pdfgen([
       'path' => file_path($postcode, $huisnummer),
@@ -34,7 +34,7 @@ function render_form() {
       'telefoon' => $telefoon,
       'email' => $email,
       'jaar' => date('Y'),
-      'verdeelkast' => $verdeelkast,
+      'armaturen' => $armaturen,
       'jaarbedrag' => $jaarbedrag,
       'iex' => $iex,
     ]);
@@ -61,9 +61,8 @@ function render_form() {
 
     <h3>Uw situatie</h3>
 
-    <label for="verdeelkast">Aantal verdeelkasten:<label>
-    <input type="number" name="verdeelkast" id="verdeelkast" min="1" required>
-  
+    <label for="verdeelkast">Aantal armaturen:<label>
+    <input type="number" name="armaturen" id="armaturen" min="1" required>
 
     <h3>Uw gegevens</h3>
 
@@ -101,4 +100,4 @@ function render_form() {
   return $htmlData;
 }
 
-\add_action('init', 'Nen\register_shortcode');  //definetly edit callback namespace
+\add_action('init', 'noodverlichting\register_shortcode');  //definetly edit callback namespace
