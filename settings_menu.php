@@ -5,14 +5,8 @@ function add_menu() {
     'Inspecties',
     'Inspecties',
     'manage_options',
-    'inspecties',
-    'Inspecties\render_settings_page',
-    'dashicons-admin-plugins'
+    'inspecties'
   );
-}
-
-function render_settings_page() {
-  echo "<h3>Inspecties Settings Page</h3>";
 }
 
 add_action('admin_menu', 'Inspecties\add_menu');

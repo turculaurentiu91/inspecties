@@ -62,9 +62,9 @@ function email_admin($data) {
 	$body .= "</body>\n"; 
   $body .= "</html>\n"; 
 
-  apply_filters( 'wp_mail_from_name', 'Offerte NEN3140 ' . $naam );
+  apply_filters( 'wp_mail_from_name', 'Offerte NEN3140 via internet' . $naam );
   add_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' ); // Make sure you edit the proper namespace for callbacks
-  $admin_email = get_option('nen-admin-email', 'avmensfoort@hoppenbrouwers.nl');
+  $admin_email = get_option('nen-admin-email', 'mvdbrand@hoppenbrouwers.nl');
   \wp_mail($admin_email, "Offerte Hoppenbrouwers Techniek - NEN3140", $body, '', file_path($postcode, $huisnummer));
     
   remove_filter( 'wp_mail_content_type', 'Nen\set_html_mail_content_type' );  // Edit the callback namespace
