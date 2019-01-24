@@ -64,7 +64,7 @@ function email_admin($data) {
 
   apply_filters( 'wp_mail_from_name', 'Offerte Noodverlichting ' . $naam );
   add_filter( 'wp_mail_content_type', 'noodverlichting\set_html_mail_content_type' ); // Make sure you edit the proper namespace for callbacks
-  $admin_email = get_option('nen-admin-email', 'mvdbrand@hoppenbrouwers.nl');
+  $admin_email = get_option('noodverlichting-admin-email', 'mvdbrand@hoppenbrouwers.nl'); //MAKE THIS THE SAME AS THE ONE IN THE SETTINGS PAGE
   \wp_mail($admin_email, "Offerte Hoppenbrouwers Techniek - Noodverlichting", $body, '', file_path($postcode, $huisnummer));
     
   remove_filter( 'wp_mail_content_type', 'noodverlichting\set_html_mail_content_type' );  // Edit the callback namespace
