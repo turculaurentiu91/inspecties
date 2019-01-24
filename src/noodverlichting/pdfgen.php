@@ -450,7 +450,7 @@ EOD;
     $pdf->SetXY(20, 265);
     $pdf->Image('images/Blokjes.jpg', 20, 265, 120, 'JPG', '', '', '', true, 300, '', false, false, 0, false, false, false);
 
-    }
+    //}
 
     $pdf->SetXY(10, 300);
     $pdf->Cell(0, 10, '', '', 1, 'L');
